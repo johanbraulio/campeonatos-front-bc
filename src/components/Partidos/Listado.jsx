@@ -31,7 +31,6 @@ const ListadoPartidos = () => {
         cargarPartidos()
     }, [token])
 
-    // Jornadas únicas para el filtro
     const jornadas = ["Todas", ...new Set(partidos.map(p => p.jornadaNumero))]
 
     const partidosFiltrados =
@@ -149,7 +148,6 @@ const ListadoPartidos = () => {
                 <p>Total de partidos: <strong className="text-slate-900">{partidosFiltrados.length}</strong></p>
             </div>
 
-            {/* Modal de edición */}
             {partidoSeleccionado && (
                 <ModalEditarPartido
                     partido={partidoSeleccionado}

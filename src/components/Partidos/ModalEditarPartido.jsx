@@ -184,7 +184,7 @@ const ModalEditarPartido = ({ partido, onClose, onGuardado }) => {
     }
 
     return (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000] p-4">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-1000 p-4">
             <div className="bg-white rounded-lg w-full max-w-[850px] max-h-[90vh] flex flex-col border border-slate-300 shadow-xl overflow-hidden">
 
                 {/* Header */}
@@ -207,7 +207,6 @@ const ModalEditarPartido = ({ partido, onClose, onGuardado }) => {
                 ) : (
                     <div className="overflow-y-auto px-5 py-4 flex flex-col gap-4">
 
-                        {/* Toggle W.O. */}
                         <div className="border border-slate-200 rounded-md p-3">
                             <label className="flex items-center gap-2 cursor-pointer font-semibold text-slate-700">
                                 <input
@@ -227,7 +226,6 @@ const ModalEditarPartido = ({ partido, onClose, onGuardado }) => {
                             )}
                         </div>
 
-                        {/* Selección de ganador - solo si es W.O. */}
                         {esWO && (
                             <div className="border border-slate-200 rounded-md p-3">
                                 <p className="m-0 mb-2 font-semibold text-[0.9rem] text-slate-700">Equipo ganador (W.O.)</p>
@@ -248,7 +246,6 @@ const ModalEditarPartido = ({ partido, onClose, onGuardado }) => {
                             </div>
                         )}
 
-                        {/* Controles de Jugadores - solo si NO es W.O. */}
                         {!esWO && (
                             <div className="flex flex-col gap-4">
                                 <TablaParticipaciones
@@ -273,13 +270,12 @@ const ModalEditarPartido = ({ partido, onClose, onGuardado }) => {
                                     onActualizarFila={actualizarFila}
                                 />
 
-                                {/* Info ganador calculado automáticamente */}
                                 <div className="bg-slate-100 rounded-md py-2.5 px-3 text-sm text-slate-600 border border-slate-200 font-medium">
                                     {(() => {
                                         const id = calcularGanadorId()
-                                        if (id === partido.equipoAId) return `🏆 Ganador calculado: ${partido.equipoANombre}`
-                                        if (id === partido.equipoBId) return `🏆 Ganador calculado: ${partido.equipoBNombre}`
-                                        return "⚖️ Empate — ajusta los goles para determinar un ganador"
+                                        if (id === partido.equipoAId) return `Ganador calculado: ${partido.equipoANombre}`
+                                        if (id === partido.equipoBId) return `Ganador calculado: ${partido.equipoBNombre}`
+                                        return "Empate"
                                     })()}
                                 </div>
                             </div>
@@ -287,7 +283,6 @@ const ModalEditarPartido = ({ partido, onClose, onGuardado }) => {
                     </div>
                 )}
 
-                {/* Footer */}
                 {!loading && (
                     <div className="flex justify-end gap-2 px-5 py-3 border-t border-slate-200 bg-slate-50">
                         <button

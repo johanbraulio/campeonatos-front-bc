@@ -11,9 +11,6 @@ const ListadoJugadores = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [filtroEquipo, setFiltroEquipo] = useState("Todos")
-
-    // Si modalState.isOpen es true, el modal se muestra.
-    // modalState.jugador contiene los datos a editar, o null si es uno nuevo.
     const [modalState, setModalState] = useState({ isOpen: false, jugador: null })
 
     const cargarJugadores = async () => {
@@ -34,7 +31,6 @@ const ListadoJugadores = () => {
         cargarJugadores()
     }, [token])
 
-    // Equipos únicos para el filtro
     const equiposFiltrados = ["Todos", ...new Set(jugadores.map(j => j.equipoNombre).filter(Boolean))]
 
     const jugadoresFiltrados =
@@ -156,7 +152,6 @@ const ListadoJugadores = () => {
                 <p>Total de jugadores: <strong className="text-slate-900">{jugadoresFiltrados.length}</strong></p>
             </div>
 
-            {/* Modal de edición / creación */}
             {modalState.isOpen && (
                 <ModalJugador
                     jugador={modalState.jugador}

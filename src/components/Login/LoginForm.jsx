@@ -6,13 +6,11 @@ const LoginForm = ({ handleSubmit, username, setUsername, password, setPassword,
         <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4">
             <div className="w-full max-w-sm">
 
-                {/* Cabecera */}
                 <div className="mb-8">
                     <h1 className="text-xl font-bold text-white">Campeonato de Fútbol Sala</h1>
                     <p className="text-slate-400 text-sm mt-1">Ingresa tus credenciales para continuar</p>
                 </div>
 
-                {/* Formulario */}
                 <form
                     onSubmit={handleSubmit}
                     className="bg-slate-800 border border-slate-700 rounded-xl p-6 flex flex-col gap-4"

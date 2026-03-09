@@ -33,7 +33,7 @@ const AppRouter = () => {
                             user === null ?
                                 <Navigate to="/login" />
                                 :
-                                hasRole(["ADMIN"/* , "editor", "manager", "finance", "RRHH" */]) ?
+                                hasRole(["ADMIN"]) ?
                                     <ListadoPartidosPage />
                                     :
                                     <Unauthorized />
@@ -51,16 +51,6 @@ const AppRouter = () => {
                                     <Unauthorized />
                         }
                     />
-
-                    {/* <Route
-                        path="/partidos"
-                        element={
-                            user === null ?
-                                <Navigate to="/login" />
-                                :
-                                <ListadoPartidosPage />
-                        }
-                    /> */}
 
                     <Route
                         path="*"

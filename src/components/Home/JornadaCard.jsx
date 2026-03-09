@@ -12,7 +12,6 @@ const JornadaCard = ({ jornada, handlePartido, handlePartidoDetalle }) => {
     return (
         <div className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
 
-            {/* Cabecera */}
             <button
                 onClick={() => setExpandido(!expandido)}
                 className="w-full flex items-center justify-between px-5 py-4 hover:bg-slate-50 transition-colors cursor-pointer"
@@ -34,7 +33,6 @@ const JornadaCard = ({ jornada, handlePartido, handlePartidoDetalle }) => {
                 </div>
             </button>
 
-            {/* Partidos */}
             {expandido && (
                 <div className="border-t border-slate-200 p-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 bg-slate-50/50">
                     {partidos.map((partido) => (

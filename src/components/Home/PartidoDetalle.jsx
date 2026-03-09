@@ -32,10 +32,9 @@ const PartidoDetalle = ({ partido, handlePartido, handlePartidoDetalle }) => {
     const detallesEquipoB = detalle?.detalles.filter(d => d.equipoId === detalle.equipoBId) || [];
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-[1000] p-4">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-1000 p-4">
             <div className="bg-white rounded-lg w-full max-w-2xl overflow-hidden flex flex-col border border-slate-200 shadow-xl">
 
-                {/* Cabecera */}
                 <div className="flex justify-between items-center bg-slate-50 px-5 py-4 border-b border-slate-200">
                     <h3 className="text-slate-900 font-bold text-lg">
                         Detalle del Partido
@@ -63,8 +62,6 @@ const PartidoDetalle = ({ partido, handlePartido, handlePartidoDetalle }) => {
                     </div>
                 ) : (
                     <div className="p-5 flex flex-col gap-6 overflow-y-auto max-h-[80vh]">
-
-                        {/* Marcador Principal */}
                         <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-6 flex items-center justify-center gap-6">
                             <div className="flex-1 text-right flex flex-col justify-center">
                                 {detalle.ganadorId === detalle.equipoAId && (
@@ -106,13 +103,8 @@ const PartidoDetalle = ({ partido, handlePartido, handlePartidoDetalle }) => {
                             </div>
                         </div>
 
-
-
-                        {/* Detalles de Jugadores */}
                         {!detalle.esWO && detalle.detalles && detalle.detalles.length > 0 && (
                             <div className="flex flex-col gap-5">
-
-                                {/* Equipo A */}
                                 {detallesEquipoA.length > 0 && (
                                     <div className="border border-slate-200 rounded-lg overflow-hidden shadow-sm">
                                         <div className="bg-slate-50 px-4 py-3 text-sm font-bold text-slate-700 border-b border-slate-200">
@@ -141,7 +133,6 @@ const PartidoDetalle = ({ partido, handlePartido, handlePartidoDetalle }) => {
                                     </div>
                                 )}
 
-                                {/* Equipo B */}
                                 {detallesEquipoB.length > 0 && (
                                     <div className="border border-slate-200 rounded-lg overflow-hidden shadow-sm">
                                         <div className="bg-slate-50 px-4 py-3 text-sm font-bold text-slate-700 border-b border-slate-200">

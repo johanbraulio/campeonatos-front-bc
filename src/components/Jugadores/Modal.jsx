@@ -11,7 +11,6 @@ const ModalJugador = ({ jugador, onClose, onGuardado }) => {
     const [saving, setSaving] = useState(false)
     const [equipos, setEquipos] = useState([])
 
-    // Form state
     const [formData, setFormData] = useState({
         nombres: "",
         apellidoPaterno: "",
@@ -35,7 +34,6 @@ const ModalJugador = ({ jugador, onClose, onGuardado }) => {
 
     useEffect(() => {
         if (isEdit) {
-            // Formatear la fecha para input type="date" (YYYY-MM-DD)
             let fechaRaw = ""
             if (jugador.fechaNacimiento) {
                 const dateObj = new Date(jugador.fechaNacimiento)
@@ -104,10 +102,9 @@ const ModalJugador = ({ jugador, onClose, onGuardado }) => {
     }
 
     return (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000] p-4">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-1000 p-4">
             <div className="bg-white rounded-lg w-full max-w-[500px] flex flex-col border border-slate-300 shadow-xl overflow-hidden">
 
-                {/* Header */}
                 <div className="flex justify-between items-center px-5 py-4 border-b border-slate-200 bg-slate-50">
                     <h3 className="m-0 text-lg font-bold text-slate-900">
                         {isEdit ? "Editar Jugador" : "Nuevo Jugador"}
@@ -117,7 +114,6 @@ const ModalJugador = ({ jugador, onClose, onGuardado }) => {
                     </button>
                 </div>
 
-                {/* Formulario */}
                 <div className="p-6 flex flex-col gap-4">
 
                     <div className="flex flex-col gap-1">
@@ -186,7 +182,6 @@ const ModalJugador = ({ jugador, onClose, onGuardado }) => {
 
                 </div>
 
-                {/* Footer */}
                 <div className="flex justify-end gap-2 px-5 py-4 border-t border-slate-200 bg-slate-50">
                     <button
                         onClick={onClose}

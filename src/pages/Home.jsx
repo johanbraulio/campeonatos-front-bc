@@ -54,13 +54,11 @@ const Home = () => {
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900">
 
-            {/* Header */}
             <div className="border-b border-slate-200 bg-white">
                 <div className="max-w-5xl mx-auto px-4 py-8">
                     <h1 className="text-2xl font-bold text-slate-900 mb-1">Campeonato de Fútbol Sala</h1>
                     <p className="text-slate-500 text-sm mb-6">Resultados y posiciones actualizados</p>
 
-                    {/* Tabs */}
                     <div className="flex gap-1 border-b border-slate-200 -mb-px">
                         {TABS.map(({ key, label, icon: Icon }) => (
                             <button
@@ -80,10 +78,8 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Contenido */}
             <div className="max-w-5xl mx-auto px-4 py-8">
 
-                {/* Cargando */}
                 {loading && (
                     <div className="flex items-center justify-center py-20 gap-3 text-slate-500">
                         <Loader2 className="w-5 h-5 animate-spin" />
@@ -91,7 +87,6 @@ const Home = () => {
                     </div>
                 )}
 
-                {/* Error */}
                 {!loading && error && (
                     <div className="flex items-center gap-3 bg-red-50 border border-red-200 rounded-lg px-4 py-3 text-red-600 text-sm">
                         <AlertTriangle className="w-4 h-4 shrink-0" />
@@ -99,7 +94,6 @@ const Home = () => {
                     </div>
                 )}
 
-                {/* Jornadas */}
                 {!loading && !error && tabActivo === "jornadas" && (
                     <>
                         {jornadas.length === 0 ? (
@@ -114,7 +108,6 @@ const Home = () => {
                     </>
                 )}
 
-                {/* Posiciones */}
                 {!loading && !error && tabActivo === "posiciones" && (
                     <TablaPosiciones posiciones={posiciones} />
                 )}
